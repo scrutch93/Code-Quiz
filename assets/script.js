@@ -1,3 +1,5 @@
+var currentQuestion = 1;
+
 function startGame() {
     document.getElementById("begin-button").style.display = "none";
     var timeLeft = 10;
@@ -11,10 +13,9 @@ function startGame() {
     }, 1000);
 
 
-
+    currentQuestion = 1;
     document.getElementById("question").innerHTML = newQuestion(1);
-    newAnswers(1);
-    
+    newAnswers(1);  
 
 }
 
@@ -49,33 +50,33 @@ function newAnswers(questionNumber) {
             document.getElementById("answer4").innerHTML= "5 + 6";
             break;
         case 2:
-            var question2Answer1 = "9870897";
-            var question2Answer2 = "['cats', 'dogs', 'fish', 'cows']";
-            var question2Answer3 = "false";
-            var question2Answer4 = "'jquery'";
+            document.getElementById("answer1").innerHTML = "9870897";
+            document.getElementById("answer2").innerHTML = "['cats', 'dogs', 'fish', 'cows']";
+            document.getElementById("answer3").innerHTM = "false";
+            document.getElementById("answer4").innerHTML = "'jquery'";
 
             // do stuff
             break;
         case 3:
-            var question3Answer1 = "displaySolutions(x,y)";
-            var question3Answer2 = "['cats', 'dogs', 'fish', 'cows']";
-            var question3Answer3 = "false";
-            var question3Answer4 = "'jquery'";
+            document.getElementById("answer1").innerHTML = "displaySolutions(x,y)";
+            document.getElementById("answer2").innerHTML = "['cats', 'dogs', 'fish', 'cows']";
+            document.getElementById("answer3").innerHTML = "false";
+            document.getElementById("answer4").innerHTML= "'jquery'";
             // do stuff
             break;
         case 4:
             // do stuff
-            var question4Answer1 = "displaySolutions(x,y)";
-            var question4Answer2 = "['cats', 'dogs', 'fish', 'cows']";
-            var question4Answer3 = "false";
-            var question4Answer4 = "'jquery'";
+            document.getElementById("answer1").innerHTML  = "displaySolutions(x,y)";
+            document.getElementById("answer2").innerHTML = "['cats', 'dogs', 'fish', 'cows']";
+            document.getElementById("answer3").innerHTML = "false";
+            document.getElementById("answer4").innerHTML = "'jquery'";
 
             break;
         case 5:
-            var question5Answer1 = "displaySolutions(x,y)";
-            var question5Answer2 = "['cats', 'dogs', 'fish', 'cows']";
-            var question5Answer3 = "cool";
-            var question5Answer4 = ".innerHTML";
+            document.getElementById("answer1").innerHTML = "displaySolutions(x,y)";
+            document.getElementById("answer2").innerHTML = "['cats', 'dogs', 'fish', 'cows']";
+            document.getElementById("answer3").innerHTML = "cool";
+            document.getElementById("answer4").innerHTML = ".innerHTML";
             // do stuff
             break;
         default:
@@ -84,30 +85,56 @@ function newAnswers(questionNumber) {
 
 }
 
-function getCorrectAnswer(questionNumber, answerClick) {
-    switch (questionNumber) {
-        case "question1":
-            if (answerClick === 1) {
+function getCorrectAnswer(answerClick) {
+    switch (currentQuestion) {
+        case 1:
+            currentQuestion = 2;
+            document.getElementById("question").innerHTML = nextQuestion(2);
+            nextAnswers(2);
+            if (answerClick == 1) {
                 return true;
             }
             else {
                 return false;
             }
             break;
-        case "question2":
-            return question2;
+        case 2:
+            currentQuestion = 3;
+            if (answerClick == 4) {
+                return true;
+            }
+            else {
+                return false;
+            }
             break;
-        case "question3":
-            return question3
-            // code block
+        case 3:
+            currentQuestion = 4;
+            if (answerClick == 1) {
+                return true;
+            }
+            else {
+                return false;
+            }
             break;
-        case "question4":
-            return question4
+        case 4:
+            currentQuestion = 5;
+            if (answerClick == 2) {
+                return true;
+            }
+            else {
+                return false;
+            }
             break;
-        case "question5":
-            return question5
+        case 5:
+            currentQuestion = 6;
+            if (answerClick == 4) {
+                return true;
+            }
+            else {
+                return false;
+            }
             break;
         default:
-        // code block
+            alert('Game over');
     }
 }
