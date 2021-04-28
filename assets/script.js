@@ -10,50 +10,45 @@ function startGame() {
         timeLeft -= 1;
     }, 1000);
 
-    console.log(newQuestion(1));
-    document.getElementById("question").innerHTML = newQuestion("question1");
+
+
+    document.getElementById("question").innerHTML = newQuestion(1);
+    newAnswers(1);
+    
+
 }
 
-
 function newQuestion(questionNumber) {
-    var question1 = "What is an example of a boolean?";
-    var question2 = "What is an exmaple of a string?";
-    var question3 = "Select an example of a function";
-    var question4 = "Select an exmaple of an array";
-    var question5 = "How would you replace a text in a DOM element?";
-
     switch (questionNumber) {
-        case "question1":
-            return question1;
+        case 1:
+            return "What is an example of a boolean?";
             break;
-        case "question2":
-            return question2;
+        case 2:
+            return "What is an exmaple of a string?";
             break;
-        case "question3":
-            return question3
-            // code block
+        case 3:
+            return "Select an example of a function";
             break;
-        case "question4":
-            return question4
+        case 4:
+            return "Select an exmaple of an array";
             break;
-        case "question5":
-            return question5
+        case 5:
+            return "How would you replace a text in a DOM element?";
             break;
         default:
-        // code block
     }
 }
 
 function newAnswers(questionNumber) {
 
     switch (questionNumber) {
-        case "question1":
-            var question1Answer1 = "var grape = true";
-            var question1Answer2 = "[Apple, Orange, Bannanas]";
-            var question1Answer3 = "3";
-            var question1Answer4 = "5 + 6";
+        case 1:
+            document.getElementById("answer1").innerHTML= "var grape = true";
+            document.getElementById("answer2").innerHTML= "[Apple, Orange, Bannanas]";
+            document.getElementById("answer3").innerHTML= "3";
+            document.getElementById("answer4").innerHTML= "5 + 6";
             break;
-        case "question2":
+        case 2:
             var question2Answer1 = "9870897";
             var question2Answer2 = "['cats', 'dogs', 'fish', 'cows']";
             var question2Answer3 = "false";
@@ -61,14 +56,14 @@ function newAnswers(questionNumber) {
 
             // do stuff
             break;
-        case "question3":
+        case 3:
             var question3Answer1 = "displaySolutions(x,y)";
             var question3Answer2 = "['cats', 'dogs', 'fish', 'cows']";
             var question3Answer3 = "false";
             var question3Answer4 = "'jquery'";
             // do stuff
             break;
-        case "question4":
+        case 4:
             // do stuff
             var question4Answer1 = "displaySolutions(x,y)";
             var question4Answer2 = "['cats', 'dogs', 'fish', 'cows']";
@@ -76,7 +71,7 @@ function newAnswers(questionNumber) {
             var question4Answer4 = "'jquery'";
 
             break;
-        case "question5":
+        case 5:
             var question5Answer1 = "displaySolutions(x,y)";
             var question5Answer2 = "['cats', 'dogs', 'fish', 'cows']";
             var question5Answer3 = "cool";
@@ -86,16 +81,6 @@ function newAnswers(questionNumber) {
         default:
             break;
     }
-
-
-
-
-
-
-
-
-
-
 
 }
 
