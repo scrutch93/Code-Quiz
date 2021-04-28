@@ -1,26 +1,21 @@
-var timeLeft = 10;
-/*var downloadTimer = setInterval(function(){
-  if(timeleft <= 0){
-    clearInterval(downloadTimer);
-  }
-  /*document.getElementById("progressBar").value = 10 - timeleft;
-  timeleft -= 1;
-}, 1000);*/
-
-
-
-function startGame(firstName){
-console.log(firstName);
-var timeLeft = 180;
-document.getElementById("timer").innerHTML = timeLeft;
-
-var startTimer = setInterval(function(){
-    if(timeleft <= 0){
-      clearInterval(startTimer);
-    }
-    document.getElementById("progressBar").value = 10 - timeleft;
-    timeleft -= 1;
-  }, 1000);
-
+function startGame(){    
+    document.getElementById("begin-button").style.display = "none";
+    var timeLeft = 10;
+    
+    setInterval(function(){    
+        if(timeLeft <= 0){
+            clearInterval(startTimer);
+          }
+        document.getElementById("timer").innerHTML = timeLeft;
+        timeLeft -= 1;      
+    }, 1000);
 }
 
+
+function newQuestion(questionNumber){
+    var question1 = "What is an example of a boolean?"
+    var question2 = "What is an exmaple of a string?"
+    var question3 = "Select an example of a function"
+    var question4 = ""
+
+}
